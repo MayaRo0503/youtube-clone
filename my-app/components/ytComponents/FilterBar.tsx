@@ -21,7 +21,7 @@ const FilterBar: React.FC<FilterBarProps> = ({
     { name: "Podcasts", apiQuery: "podcast" },
     { name: "Live", apiQuery: "live" },
     { name: "Recently upload", apiQuery: "recently uploaded" },
-    { name: "New to you", apiQuery: "new" },
+    { name: "New", apiQuery: "new" },
   ];
 
   return (
@@ -35,11 +35,10 @@ const FilterBar: React.FC<FilterBarProps> = ({
     >
       <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
         <View style={{ flexDirection: "row", alignItems: "center" }}>
-          <Ionicons name="compass-outline" size={29} color="black" />
           {categories.map((category, index) => (
             <TouchableOpacity
               key={index}
-              onPress={() => setCategory(category.apiQuery)} // Update the selected category
+              onPress={() => setCategory(category.apiQuery)}
               style={{
                 backgroundColor:
                   selectedCategory === category.apiQuery ? "black" : "#DDDDDD", // Highlight selected button

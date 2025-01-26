@@ -49,31 +49,12 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="Upload"
+        name="Favorites"
         options={{
           headerShown: false,
-          title: "",
+          title: "Favorites",
           tabBarIcon: ({ color }) => (
-            <AntDesign name="pluscircleo" size={28} color="black" />
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="Subscriptions"
-        options={{
-          headerShown: false,
-          title: "Subscriptions",
-          tabBarIcon: ({ color }) => (
-            <MaterialIcons name="subscriptions" size={22} color="black" />
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="User"
-        options={{
-          title: "You",
-          tabBarIcon: ({ color }) => (
-            <Ionicons name="logo-google" size={22} color="black" />
+            <Ionicons name="heart" size={22} color="black" />
           ),
         }}
       />
