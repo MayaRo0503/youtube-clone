@@ -32,38 +32,45 @@ A modern YouTube clone built with React Native and Expo.
 <p align="center">
 
 #### 🔍 Search Experience
-<img src="https://github.com/MayaRo0503/youtube-clone/blob/main/my-app/assets/images/search.jpg" width="300" alt="Search Interface"/>
+<img src="https://raw.githubusercontent.com/MayaRo0503/youtube-clone/main/my-app/assets/images/search.jpg" width="300" alt="Search Interface"/>
 
 *Intuitive search with category filters*
 
 #### 📱 Search Results
-<img src="https://github.com/MayaRo0503/youtube-clone/blob/main/my-app/assets/images/search-result.jpg" width="300" alt="Search Results"/>
+<img src="https://raw.githubusercontent.com/MayaRo0503/youtube-clone/main/my-app/assets/images/search-result.jpg" width="300" alt="Search Results"/>
 
 *Clean and organized search results*
 
 #### 📺 Home Feed
-<img src="https://github.com/MayaRo0503/youtube-clone/blob/main/my-app/assets/images/home.jpg" width="300" alt="Home Screen"/>
+<img src="https://raw.githubusercontent.com/MayaRo0503/youtube-clone/main/my-app/assets/images/home.jpg" width="300" alt="Home Screen"/>
 
 *Personalized content feed*
 
 #### 📹 Shorts Feature
-<img src="https://github.com/MayaRo0503/youtube-clone/blob/main/my-app/assets/images/shorts.jpg" width="300" alt="Shorts Feed"/>
+<img src="https://raw.githubusercontent.com/MayaRo0503/youtube-clone/main/my-app/assets/images/shorts.jpg" width="300" alt="Shorts Feed"/>
 
 *Vertical short-form video experience*
 
 </p>
 
-## 📂 Project Structure
+---
 
-```bash
-my-app/
-├── assets/
-│   └── images/
-│       ├── video.mp4
-│       ├── search-result.jpg
-│       ├── search.jpg
-│       ├── shorts.jpg
-│       └── home.jpg
+## 🚀 Getting Started
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+
+### Prerequisites
+
+- Node.js and npm (or yarn) installed on your machine.
+- Expo CLI: `npm install --global expo-cli`
+- Expo Go app installed on your mobile device for testing.
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/MayaRo0503/youtube-clone.git
 
 1. Clone the repository:
 
