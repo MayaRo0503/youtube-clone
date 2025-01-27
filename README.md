@@ -1,7 +1,7 @@
 # youtube-clone
 
 `````markdown
-# My Expo App
+# A modern YouTube clone built with React Native and Expo.
 
 This project is a simple mobile application built using Expo, Expo Router, React Native, and TypeScript. It demonstrates basic navigation, state management, and API interaction.
 
@@ -14,56 +14,46 @@ These instructions will get you a copy of the project up and running on your loc
 - Node.js and npm (or yarn) installed on your machine..
 - Expo CLI: `npm install --global expo-cli`
 - Expo Go app installed on your mobile device for testing.
+# YouTube Clone App
 
-## App Screenshots & Demo
+## 📱 App Preview
 
 ### Video Demo
+[Watch Demo Video](https://github.com/MayaRo0503/youtube-clone/raw/main/my-app/assets/images/video.mp4)
 
-https://github.com/MayaRo0503/youtube-clone/my-app/assets/images/video.mp4
+### Key Features
 
-### App Screenshots
+<div align="center">
 
-Here's a visual tour through the main features of our application:
+#### 🔍 Search Experience
+<img src="https://raw.githubusercontent.com/MayaRo0503/youtube-clone/main/my-app/assets/images/search.jpg" width="300" alt="Search Interface" />
+<p><em>Intuitive search with category filters</em></p>
 
-#### Home Screen
+#### 📱 Search Results
+<img src="https://raw.githubusercontent.com/MayaRo0503/youtube-clone/main/my-app/assets/images/search-result.jpg" width="300" alt="Search Results" />
+<p><em>Clean and organized search results</em></p>
 
-![Home Screen](./assets/images/home.jpg)
-_The main interface where users can browse content_
+#### 📺 Home Feed
+<img src="https://raw.githubusercontent.com/MayaRo0503/youtube-clone/main/my-app/assets/images/home.jpg" width="300" alt="Home Screen" />
+<p><em>Personalized content feed</em></p>
 
-#### Search Interface
+#### 📹 Shorts Feature
+<img src="https://raw.githubusercontent.com/MayaRo0503/youtube-clone/main/my-app/assets/images/shorts.jpg" width="300" alt="Shorts Feed" />
+<p><em>Vertical short-form video experience</em></p>
 
-![Search Interface](./assets/images/search.jpg)
-_Search functionality with keyboard input_
+</div>
 
-#### Search Results
+## 📂 Project Structure
 
-![Search Results](./assets/images/search-result.jpg)
-_Display of search results with filtered content_
-
-#### Favorites View
-
-![Favorites](./assets/images/favorites.jpg)
-_Where users can view their saved favorite items_
-
-#### Shorts Feed
-
-![Shorts Feed](./assets/images/shorts.jpg)
-_Short-form vertical video content feed_
-
-## Directory Structure
-
-````bash
+```bash
 my-app/
 ├── assets/
 │   └── images/
 │       ├── video.mp4
 │       ├── search-result.jpg
 │       ├── search.jpg
-│       ├── favorites.jpg
 │       ├── shorts.jpg
 │       └── home.jpg
-
-
 ### Installation
 
 1. Clone the repository:
