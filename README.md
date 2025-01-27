@@ -1,6 +1,6 @@
 # youtube-clone
 
-````markdown
+`````markdown
 # My Expo App
 
 This project is a simple mobile application built using Expo, Expo Router, React Native, and TypeScript. It demonstrates basic navigation, state management, and API interaction.
@@ -15,13 +15,64 @@ These instructions will get you a copy of the project up and running on your loc
 - Expo CLI: `npm install --global expo-cli`
 - Expo Go app installed on your mobile device for testing.
 
+## App Screenshots & Demo
+
+### Video Demo
+
+https://github.com/MayaRo0503/youtube-clone/my-app/assets/images/video.mp4
+
+### App Screenshots
+
+Here's a visual tour through the main features of our application:
+
+#### Home Screen
+
+![Home Screen](./assets/images/home.jpg)
+_The main interface where users can browse content_
+
+#### Search Interface
+
+![Search Interface](./assets/images/search.jpg)
+_Search functionality with keyboard input_
+
+#### Search Results
+
+![Search Results](./assets/images/search-result.jpg)
+_Display of search results with filtered content_
+
+#### Favorites View
+
+![Favorites](./assets/images/favorites.jpg)
+_Where users can view their saved favorite items_
+
+#### Shorts Feed
+
+![Shorts Feed](./assets/images/shorts.jpg)
+_Short-form vertical video content feed_
+
+## Directory Structure
+
+````bash
+my-app/
+├── assets/
+│   └── images/
+│       ├── video.mp4
+│       ├── search-result.jpg
+│       ├── search.jpg
+│       ├── favorites.jpg
+│       ├── shorts.jpg
+│       └── home.jpg
+
+
 ### Installation
 
 1. Clone the repository:
 
 ```bash
 git clone https://github.com/MayaRo0503/youtube-clone.git
-```
+````
+`````
+
 ````
 
 2. Navigate to the project directory:
@@ -82,16 +133,6 @@ npm run ios
 yarn ios
 ```
 
-### Testing
-
-This project uses Jest for testing. To run the tests:
-
-```shellscript
-npm test
-# or
-yarn test
-```
-
 ## Built With
 
 - [Expo](https://expo.dev/) - Framework for building universal React applications.
@@ -110,3 +151,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 ```plaintext
 
 ```
+````
