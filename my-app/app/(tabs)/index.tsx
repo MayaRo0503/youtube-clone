@@ -15,6 +15,7 @@ import { router } from "expo-router";
 import { YOUTUBE_API_KEY, YOUTUBE_API_URL } from "@env";
 import { Ionicons } from "@expo/vector-icons";
 
+// The main home screen that displays a list of videos based on selected category.
 type VideoItem = {
   id: {
     videoId: string;
@@ -37,6 +38,7 @@ const index = () => {
   const [error, setError] = useState<string | null>(null);
   const [selectedCategory, setSelectedCategory] = useState("popular");
 
+  // Fetch videos from the YouTube API whenever the selected category changes.
   useEffect(() => {
     const fetchVideos = async () => {
       setLoading(true);
@@ -60,6 +62,7 @@ const index = () => {
     fetchVideos();
   }, [selectedCategory]);
 
+  // Helper to format date strings into a more human-friendly format.
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
     return date.toLocaleDateString("en-US", {
@@ -69,6 +72,7 @@ const index = () => {
     });
   };
 
+  // Renders a single video item in the list.
   const renderVideoItem = ({ item }: { item: VideoItem }) => (
     <TouchableOpacity
       style={styles.videoItem}
@@ -101,7 +105,9 @@ const index = () => {
 
   return (
     <SafeAreaView style={styles.container}>
+      {/* The top bar includes logo and search functionality */}
       <TopBar />
+      {/* The filter bar to switch between categories */}
       <FilterBar
         setCategory={setSelectedCategory}
         selectedCategory={selectedCategory}
@@ -110,11 +116,13 @@ const index = () => {
         {loading ? (
           <ActivityIndicator size="large" color="#FF0000" />
         ) : error ? (
+          // Display an error message if something goes wrong with the API request
           <View style={styles.errorContainer}>
             <Ionicons name="alert-circle-outline" size={48} color="#FF0000" />
             <Text style={styles.errorText}>{error}</Text>
           </View>
         ) : (
+          // The list of videos
           <FlatList
             data={videos}
             renderItem={renderVideoItem}
@@ -127,6 +135,7 @@ const index = () => {
   );
 };
 
+// Styles for the home screen layout and list items.
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: "#f0f0f0" },
   content: { flex: 1, padding: 10 },

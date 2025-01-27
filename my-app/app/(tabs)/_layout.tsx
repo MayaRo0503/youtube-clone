@@ -1,4 +1,3 @@
-// my-app/app/(tabs)/_layout.tsx
 import React from "react";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { Tabs } from "expo-router";
@@ -8,6 +7,7 @@ import AntDesign from "@expo/vector-icons/AntDesign";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import Ionicons from "@expo/vector-icons/Ionicons";
 
+// Custom icon component for the bottom tab bar.
 function TabBarIcon(props: {
   name: React.ComponentProps<typeof FontAwesome>["name"];
   color: string;
@@ -16,8 +16,10 @@ function TabBarIcon(props: {
 }
 
 export default function TabLayout() {
+  // Manually setting the color scheme to "light" for demonstration purposes.
   const colorScheme = "light";
 
+  // Rendering a Tabs layout with three routes: Home, Shorts, and Favorites.
   return (
     <Tabs
       screenOptions={{

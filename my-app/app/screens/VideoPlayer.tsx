@@ -19,9 +19,11 @@ import {
   isFavorite,
 } from "@/utils/favoritesManager";
 
+// Retrieve the device's screen width to maintain video aspect ratio.
 const { width } = Dimensions.get("window");
 const videoHeight = width * 0.5625; // 16:9 aspect ratio
 
+// Structure for storing video details fetched from the YouTube Data API.
 interface VideoDetails {
   title: string;
   description: string;
@@ -33,7 +35,10 @@ interface VideoDetails {
 }
 
 const VideoPlayer: React.FC = () => {
+  // Get the videoId from route parameters.
   const { videoId } = useLocalSearchParams<{ videoId: string }>();
+
+  // States for fullscreen, details, loading indicator, and favorite status.
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [videoDetails, setVideoDetails] = useState<VideoDetails | null>(null);
   const [loading, setLoading] = useState(true);
@@ -41,6 +46,7 @@ const VideoPlayer: React.FC = () => {
   const [isFavorited, setIsFavorited] = useState(false);
   const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
 
+  // Fetch video details and favorite status once the videoId is available.
   useEffect(() => {
     const fetchVideoDetails = async () => {
       try {
@@ -78,6 +84,7 @@ const VideoPlayer: React.FC = () => {
     }
   }, [videoId]);
 
+  // Return an error view if no video ID is provided.
   if (!videoId) {
     return (
       <View style={styles.errorContainer}>
@@ -86,14 +93,17 @@ const VideoPlayer: React.FC = () => {
     );
   }
 
+  // Toggles fullscreen mode for the video player.
   const toggleFullscreen = () => {
     setIsFullscreen(!isFullscreen);
   };
 
+  // Navigate back to the previous screen.
   const handleGoBack = () => {
     router.back();
   };
 
+  // Handles add/remove from favorites based on the current status.
   const handleToggleFavorite = async () => {
     if (isFavorited) {
       await removeFromFavorites(videoId);
@@ -107,6 +117,7 @@ const VideoPlayer: React.FC = () => {
     setIsFavorited(!isFavorited);
   };
 
+  // Format the date string to a more readable format.
   const formatDate = (dateString: string) => {
     return new Date(dateString).toLocaleDateString("en-US", {
       year: "numeric",
@@ -115,6 +126,7 @@ const VideoPlayer: React.FC = () => {
     });
   };
 
+  // Convert ISO 8601 duration format (e.g. PT5M30S) to a human-readable format.
   const formatDuration = (duration: string) => {
     const match = duration.match(/PT(\d+H)?(\d+M)?(\d+S)?/);
     if (!match) {
@@ -129,6 +141,7 @@ const VideoPlayer: React.FC = () => {
     )}:${String(seconds).padStart(2, "0")}`;
   };
 
+  // Simplify large numbers (e.g., 45,000 to 45K, 1,000,000 to 1.0M).
   const formatViewCount = (count: string) => {
     const num = Number.parseInt(count);
     if (num >= 1000000) {
@@ -141,6 +154,7 @@ const VideoPlayer: React.FC = () => {
 
   return (
     <View style={styles.container}>
+      {/* Custom header configuration */}
       <Stack.Screen
         options={{
           headerLeft: () => (
@@ -167,6 +181,7 @@ const VideoPlayer: React.FC = () => {
         }}
       />
       <ScrollView>
+        {/* Main video container with optional fullscreen mode */}
         <View
           style={[
             styles.videoContainer,
@@ -180,6 +195,7 @@ const VideoPlayer: React.FC = () => {
             allowsFullscreenVideo={true}
           />
         </View>
+        {/* Button to toggle fullscreen */}
         <View style={styles.controlsContainer}>
           <TouchableOpacity
             onPress={toggleFullscreen}
@@ -192,6 +208,7 @@ const VideoPlayer: React.FC = () => {
             />
           </TouchableOpacity>
         </View>
+        {/* Loading indicator and video details */}
         {loading ? (
           <ActivityIndicator
             size="large"
@@ -219,6 +236,7 @@ const VideoPlayer: React.FC = () => {
               <Text style={styles.publishDate}>
                 Published on {formatDate(videoDetails.publishedAt)}
               </Text>
+              {/* Toggleable description section */}
               <TouchableOpacity
                 onPress={() => setIsDescriptionExpanded(!isDescriptionExpanded)}
               >
@@ -244,6 +262,7 @@ const VideoPlayer: React.FC = () => {
   );
 };
 
+// Styles for the video player and its UI components.
 const styles = StyleSheet.create({
   container: {
     flex: 1,

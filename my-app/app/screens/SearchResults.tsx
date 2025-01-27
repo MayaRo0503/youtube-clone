@@ -1,5 +1,4 @@
-import type React from "react";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   View,
   Text,
@@ -9,9 +8,10 @@ import {
   StyleSheet,
   ActivityIndicator,
 } from "react-native";
-import { useLocalSearchParams, useRouter } from "expo-router";
+import { useLocalSearchParams, useRouter, Stack } from "expo-router";
 import { YOUTUBE_API_KEY } from "@env";
 
+// Define the structure of a single video returned by the API
 interface Video {
   id: { videoId: string };
   snippet: {
@@ -23,18 +23,24 @@ interface Video {
   };
 }
 
-const SearchResults: React.FC = () => {
+export default function SearchResults() {
+  // Retrieve the 'query' parameter from the route
   const { query } = useLocalSearchParams<{ query: string }>();
+
+  // State to hold the list of videos and loading status
   const [videos, setVideos] = useState<Video[]>([]);
   const [loading, setLoading] = useState(true);
+
+  // This allows navigation to different screens using the Expo Router
   const router = useRouter();
 
+  // Fetch search results from the YouTube Data API when 'query' changes
   useEffect(() => {
     const fetchSearchResults = async () => {
       try {
         const response = await fetch(
           `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(
-            query
+            query ?? ""
           )}&type=video&key=${YOUTUBE_API_KEY}&maxResults=20&order=relevance`
         );
         const data = await response.json();
@@ -49,15 +55,7 @@ const SearchResults: React.FC = () => {
     fetchSearchResults();
   }, [query]);
 
-  const formatViewCount = (count: number) => {
-    if (count >= 1000000) {
-      return (count / 1000000).toFixed(1) + "M";
-    } else if (count >= 1000) {
-      return (count / 1000).toFixed(1) + "K";
-    }
-    return count.toString();
-  };
-
+  // Helper function to format the publish date into a relative time string
   const formatPublishDate = (dateString: string) => {
     const date = new Date(dateString);
     const now = new Date();
@@ -80,6 +78,7 @@ const SearchResults: React.FC = () => {
     }
   };
 
+  // Render function for each video item in the FlatList
   const renderVideoItem = ({ item }: { item: Video }) => (
     <TouchableOpacity
       style={styles.videoItem}
@@ -109,6 +108,7 @@ const SearchResults: React.FC = () => {
     </TouchableOpacity>
   );
 
+  // Show a loading indicator while fetching data
   if (loading) {
     return (
       <View style={styles.loadingContainer}>
@@ -118,18 +118,29 @@ const SearchResults: React.FC = () => {
   }
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.searchQueryText}>Search results for: {query}</Text>
-      <FlatList
-        data={videos}
-        renderItem={renderVideoItem}
-        keyExtractor={(item) => item.id.videoId}
-        contentContainerStyle={styles.listContainer}
+    <>
+      {/* Override the header title and back button */}
+      <Stack.Screen
+        options={{
+          headerTitle: "Search Results",
+          headerBackTitle: "Back",
+        }}
       />
-    </View>
-  );
-};
 
+      <View style={styles.container}>
+        <Text style={styles.searchQueryText}>Search results for: {query}</Text>
+        <FlatList
+          data={videos}
+          renderItem={renderVideoItem}
+          keyExtractor={(item) => item.id.videoId}
+          contentContainerStyle={styles.listContainer}
+        />
+      </View>
+    </>
+  );
+}
+
+// Styles for the components in this screen
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -189,5 +200,3 @@ const styles = StyleSheet.create({
     color: "#606060",
   },
 });
-
-export default SearchResults;

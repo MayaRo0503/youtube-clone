@@ -1,17 +1,17 @@
-// my-app/app/components/ytComponents/FilterBar.tsx
 import { View, Text, ScrollView, TouchableOpacity } from "react-native";
 import React from "react";
-import Ionicons from "@expo/vector-icons/Ionicons";
 
+// Props for managing and displaying the categories.
 type FilterBarProps = {
-  setCategory: (category: string) => void; // Callback to update the selected category
-  selectedCategory: string; // Currently selected category
+  setCategory: (category: string) => void; // Callback to update the selected category.
+  selectedCategory: string; // Currently selected category.
 };
 
 const FilterBar: React.FC<FilterBarProps> = ({
   setCategory,
   selectedCategory,
 }) => {
+  // List of categories and their corresponding query text for the API.
   const categories = [
     { name: "All", apiQuery: "popular" },
     { name: "Music", apiQuery: "music" },
@@ -33,6 +33,7 @@ const FilterBar: React.FC<FilterBarProps> = ({
         paddingHorizontal: 10,
       }}
     >
+      {/* Horizontal scrolling container for all category buttons */}
       <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
         <View style={{ flexDirection: "row", alignItems: "center" }}>
           {categories.map((category, index) => (
@@ -41,7 +42,7 @@ const FilterBar: React.FC<FilterBarProps> = ({
               onPress={() => setCategory(category.apiQuery)}
               style={{
                 backgroundColor:
-                  selectedCategory === category.apiQuery ? "black" : "#DDDDDD", // Highlight selected button
+                  selectedCategory === category.apiQuery ? "black" : "#DDDDDD",
                 padding: 10,
                 paddingHorizontal: 18,
                 borderRadius: 10,
@@ -51,7 +52,7 @@ const FilterBar: React.FC<FilterBarProps> = ({
               <Text
                 style={{
                   color:
-                    selectedCategory === category.apiQuery ? "white" : "black", // Text color based on selection
+                    selectedCategory === category.apiQuery ? "white" : "black",
                 }}
               >
                 {category.name}

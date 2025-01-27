@@ -16,8 +16,10 @@ import { useRouter } from "expo-router";
 import { YOUTUBE_API_KEY } from "@env";
 import { Ionicons } from "@expo/vector-icons";
 
+// Retrieve screen dimensions for layout calculations.
 const { width, height } = Dimensions.get("window");
 
+// Shape of short video objects.
 interface ShortVideo {
   id: string;
   title: string;
@@ -33,6 +35,7 @@ const Shorts: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
   const router = useRouter();
 
+  // Fetch shorts by querying the YouTube API for short-form content.
   const fetchShorts = useCallback(async () => {
     try {
       const response = await fetch(
@@ -40,6 +43,7 @@ const Shorts: React.FC = () => {
       );
       const data = await response.json();
       if (response.ok) {
+        // For each returned item, retrieve detailed information (e.g., stats).
         const shortsData = await Promise.all(
           data.items.map(async (item: any) => {
             const videoResponse = await fetch(
@@ -47,7 +51,7 @@ const Shorts: React.FC = () => {
             );
             const videoData = await videoResponse.json();
             const duration = videoData.items[0].contentDetails.duration;
-            // Only include videos shorter than 1 minute
+            // Only include videos that are <= 60 seconds in duration.
             if (parseDuration(duration) <= 60) {
               return {
                 id: item.id.videoId,
@@ -60,6 +64,7 @@ const Shorts: React.FC = () => {
             return null;
           })
         );
+        // Filter out any null entries (videos longer than 60 seconds).
         setShorts(
           shortsData.filter((short): short is ShortVideo => short !== null)
         );
@@ -74,15 +79,18 @@ const Shorts: React.FC = () => {
     }
   }, []);
 
+  // Initial load of the short videos.
   useEffect(() => {
     fetchShorts();
   }, [fetchShorts]);
 
+  // Pull-to-refresh handler.
   const onRefresh = useCallback(() => {
     setRefreshing(true);
     fetchShorts();
   }, [fetchShorts]);
 
+  // Render each short in a grid-like layout.
   const renderShortItem = ({ item }: { item: ShortVideo }) => (
     <TouchableOpacity
       style={styles.shortItem}
@@ -119,6 +127,7 @@ const Shorts: React.FC = () => {
     </TouchableOpacity>
   );
 
+  // Helper to format view counts (e.g., 1.5K, 2.3M).
   const formatViewCount = (count: string) => {
     const num = Number.parseInt(count);
     if (num >= 1000000) {
@@ -129,6 +138,7 @@ const Shorts: React.FC = () => {
     return num.toString();
   };
 
+  // Parse ISO 8601 duration format and convert to total seconds.
   const parseDuration = (duration: string) => {
     const match = duration.match(/PT(\d+H)?(\d+M)?(\d+S)?/);
     if (!match) return 0;
@@ -138,6 +148,7 @@ const Shorts: React.FC = () => {
     return hours * 3600 + minutes * 60 + seconds;
   };
 
+  // Loading indicator if data is still being fetched.
   if (loading) {
     return (
       <View style={styles.centerContainer}>
@@ -146,6 +157,7 @@ const Shorts: React.FC = () => {
     );
   }
 
+  // Display an error message if the request fails.
   if (error) {
     return (
       <View style={styles.centerContainer}>
@@ -159,6 +171,7 @@ const Shorts: React.FC = () => {
 
   return (
     <SafeAreaView style={styles.container}>
+      {/* Grid of short-form YouTube content. Supports pull-to-refresh. */}
       <FlatList
         data={shorts}
         renderItem={renderShortItem}
@@ -185,6 +198,7 @@ const Shorts: React.FC = () => {
   );
 };
 
+// Styles for the Shorts screen, including layout for the grid view.
 const styles = StyleSheet.create({
   container: {
     flex: 1,

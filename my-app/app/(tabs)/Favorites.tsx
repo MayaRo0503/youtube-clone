@@ -11,9 +11,11 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { router } from "expo-router";
 import { getFavorites, type FavoriteVideo } from "@/utils/favoritesManager";
 
+// This screen displays a list of favorite videos stored in local storage.
 const Favorites = () => {
   const [favorites, setFavorites] = useState<FavoriteVideo[]>([]);
 
+  // Load favorited videos from local storage when the component mounts.
   useEffect(() => {
     const loadFavorites = async () => {
       const favoritedVideos = await getFavorites();
@@ -23,6 +25,7 @@ const Favorites = () => {
     loadFavorites();
   }, []);
 
+  // Renders each favorite item with its thumbnail and title.
   const renderVideoItem = ({ item }: { item: FavoriteVideo }) => (
     <TouchableOpacity
       style={styles.videoItem}
@@ -57,6 +60,7 @@ const Favorites = () => {
   );
 };
 
+// Styles for the Favorites screen layout.
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: "#f0f0f0" },
   content: { padding: 10, flex: 1 },
