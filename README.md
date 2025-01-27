@@ -42,7 +42,7 @@ A modern YouTube clone built with React Native and Expo.
 *Clean and organized search results*
 
 #### 📺 Home Feed
-<img src="https://raw.githubusercontent.com/MayaRo0503/youtube-clone/main/my-app/assets/images/home.jpg" width="300" alt="Home Screen"/>
+![Image Description](my-app/assets/images/facorites.jpg)
 
 *Personalized content feed*
 
