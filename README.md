@@ -19,6 +19,11 @@ These instructions will get you a copy of the project up and running on your loc
 
 A modern YouTube clone built with React Native and Expo.
 # YouTube Clone App
+# YouTube Clone App
+
+![version](https://img.shields.io/badge/version-2.0.0-blue.svg)
+[![GitHub issues open](https://img.shields.io/github/issues/MayaRo0503/youtube-clone.svg)](https://github.com/MayaRo0503/youtube-clone/issues?q=is%3Aopen+is%3Aissue)
+[![GitHub issues closed](https://img.shields.io/github/issues-closed-raw/MayaRo0503/youtube-clone.svg)](https://github.com/MayaRo0503/youtube-clone/issues?q=is%3Aissue+is%3Aclosed)
 
 A modern YouTube clone built with React Native and Expo.
 
@@ -42,24 +47,36 @@ A modern YouTube clone built with React Native and Expo.
 *Clean and organized search results*
 
 #### 📺 Home Feed
-![Image Description](my-app/assets/images/facorites.jpg)
-
-*Personalized content feed*
-
-#### 📹 Shorts Feature
-<img src="my-app/assets/images/facorites.jpg" width="300" alt="Shorts Feed"/>
-
-*Vertical short-form video experience*
-
-#### 📺 Home Feed
 <img src="https://raw.githubusercontent.com/MayaRo0503/youtube-clone/main/my-app/assets/images/home.jpg" width="300" alt="Home Screen"/>
 
 *Personalized content feed*
 
 #### 📹 Shorts Feature
-<img src="https://raw.githubusercontent.com/MayaRo0503/youtube-clone/main/my-app/assets/images/favorites.jpg" width="300" alt="Shorts Feed"/>
+<img src="https://raw.githubusercontent.com/MayaRo0503/youtube-clone/main/my-app/assets/images/shorts.jpg" width="300" alt="Shorts Feed"/>
 
 *Vertical short-form video experience*
+
+</p>
+
+---
+
+## 🚀 Getting Started
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+
+### Prerequisites
+
+- Node.js and npm (or yarn) installed on your machine.
+- Expo CLI: `npm install --global expo-cli`
+- Expo Go app installed on your mobile device for testing.
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/MayaRo0503/youtube-clone.git
+
 ---
 
 ## 🚀 Getting Started
