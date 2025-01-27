@@ -34,7 +34,7 @@ A modern YouTube clone built with React Native and Expo.
 *Intuitive search with category filters*
 
 #### 📱 Search Results
-<img src="https://github.com/MayaRo0503/youtube-clone/raw/main/my-app/assets/images/search-result.jpg" width="300" style="display: block; margin: auto;" alt="Search Results">
+<img src="https://github.com/MayaRo0503/youtube-clone/blob/main/my-app/assets/images/search.jpg" width="300" style="display: block; margin: auto;" alt="Search Results">
 
 *Clean and organized search results*
 
