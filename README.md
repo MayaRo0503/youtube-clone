@@ -47,7 +47,7 @@ A modern YouTube clone built with React Native and Expo.
 *Personalized content feed*
 
 #### 📹 Shorts Feature
-<img src="https://raw.githubusercontent.com/MayaRo0503/youtube-clone/main/my-app/assets/images/shorts.jpg" width="300" alt="Shorts Feed"/>
+<img src="my-app/assets/images/facorites.jpg" width="300" alt="Shorts Feed"/>
 
 *Vertical short-form video experience*
 
