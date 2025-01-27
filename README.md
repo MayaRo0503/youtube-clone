@@ -15,6 +15,9 @@ These instructions will get you a copy of the project up and running on your loc
 - Expo CLI: `npm install --global expo-cli`
 - Expo Go app installed on your mobile device for testing.
 # YouTube Clone App
+# YouTube Clone App
+
+A modern YouTube clone built with React Native and Expo.
 
 ## 📱 App Preview
 
@@ -23,25 +26,29 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Key Features
 
-<div align="center">
+<p align="center">
 
 #### 🔍 Search Experience
-<img src="https://raw.githubusercontent.com/MayaRo0503/youtube-clone/main/my-app/assets/images/search.jpg" width="300" alt="Search Interface" />
-<p><em>Intuitive search with category filters</em></p>
+<img src="https://github.com/MayaRo0503/youtube-clone/raw/main/my-app/assets/images/search.jpg" width="300" style="display: block; margin: auto;" alt="Search Interface">
+
+*Intuitive search with category filters*
 
 #### 📱 Search Results
-<img src="https://raw.githubusercontent.com/MayaRo0503/youtube-clone/main/my-app/assets/images/search-result.jpg" width="300" alt="Search Results" />
-<p><em>Clean and organized search results</em></p>
+<img src="https://github.com/MayaRo0503/youtube-clone/raw/main/my-app/assets/images/search-result.jpg" width="300" style="display: block; margin: auto;" alt="Search Results">
+
+*Clean and organized search results*
 
 #### 📺 Home Feed
-<img src="https://raw.githubusercontent.com/MayaRo0503/youtube-clone/main/my-app/assets/images/home.jpg" width="300" alt="Home Screen" />
-<p><em>Personalized content feed</em></p>
+<img src="https://github.com/MayaRo0503/youtube-clone/raw/main/my-app/assets/images/home.jpg" width="300" style="display: block; margin: auto;" alt="Home Screen">
+
+*Personalized content feed*
 
 #### 📹 Shorts Feature
-<img src="https://raw.githubusercontent.com/MayaRo0503/youtube-clone/main/my-app/assets/images/shorts.jpg" width="300" alt="Shorts Feed" />
-<p><em>Vertical short-form video experience</em></p>
+<img src="https://github.com/MayaRo0503/youtube-clone/raw/main/my-app/assets/images/shorts.jpg" width="300" style="display: block; margin: auto;" alt="Shorts Feed">
 
-</div>
+*Vertical short-form video experience*
+
+</p>
 
 ## 📂 Project Structure
 
@@ -54,7 +61,6 @@ my-app/
 │       ├── search.jpg
 │       ├── shorts.jpg
 │       └── home.jpg
-### Installation
 
 1. Clone the repository:
 
