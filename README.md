@@ -11,7 +11,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-- Node.js and npm (or yarn) installed on your machine.
+- Node.js and npm (or yarn) installed on your machine..
 - Expo CLI: `npm install --global expo-cli`
 - Expo Go app installed on your mobile device for testing.
 
