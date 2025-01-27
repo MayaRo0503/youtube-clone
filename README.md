@@ -18,33 +18,36 @@ These instructions will get you a copy of the project up and running on your loc
 # YouTube Clone App
 
 A modern YouTube clone built with React Native and Expo.
+# YouTube Clone App
+
+A modern YouTube clone built with React Native and Expo.
 
 ## 📱 App Preview
 
 ### Video Demo
-[Watch Demo Video](https://github.com/MayaRo0503/youtube-clone/raw/main/my-app/assets/images/video.mp4)
+[Watch Demo Video](https://github.com/MayaRo0503/youtube-clone/blob/main/my-app/assets/images/video.mp4)
 
 ### Key Features
 
 <p align="center">
 
 #### 🔍 Search Experience
-<img src="https://github.com/MayaRo0503/youtube-clone/raw/main/my-app/assets/images/search.jpg" width="300" style="display: block; margin: auto;" alt="Search Interface">
+<img src="https://github.com/MayaRo0503/youtube-clone/blob/main/my-app/assets/images/search.jpg" width="300" alt="Search Interface"/>
 
 *Intuitive search with category filters*
 
 #### 📱 Search Results
-<img src="https://github.com/MayaRo0503/youtube-clone/blob/main/my-app/assets/images/search.jpg" width="300" style="display: block; margin: auto;" alt="Search Results">
+<img src="https://github.com/MayaRo0503/youtube-clone/blob/main/my-app/assets/images/search-result.jpg" width="300" alt="Search Results"/>
 
 *Clean and organized search results*
 
 #### 📺 Home Feed
-<img src="https://github.com/MayaRo0503/youtube-clone/raw/main/my-app/assets/images/home.jpg" width="300" style="display: block; margin: auto;" alt="Home Screen">
+<img src="https://github.com/MayaRo0503/youtube-clone/blob/main/my-app/assets/images/home.jpg" width="300" alt="Home Screen"/>
 
 *Personalized content feed*
 
 #### 📹 Shorts Feature
-<img src="https://github.com/MayaRo0503/youtube-clone/raw/main/my-app/assets/images/shorts.jpg" width="300" style="display: block; margin: auto;" alt="Shorts Feed">
+<img src="https://github.com/MayaRo0503/youtube-clone/blob/main/my-app/assets/images/shorts.jpg" width="300" alt="Shorts Feed"/>
 
 *Vertical short-form video experience*
 
