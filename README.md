@@ -43,6 +43,7 @@ A modern YouTube clone built with React Native and Expo.
 
 #### 📱 Search Results
 <img src="https://raw.githubusercontent.com/MayaRo0503/youtube-clone/main/my-app/assets/images/search-result.jpg" width="300" alt="Search Results"/>
+![Uploading search-result.jpg…]()
 
 *Clean and organized search results*
 
