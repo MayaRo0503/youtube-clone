@@ -46,20 +46,27 @@ const Shorts: React.FC = () => {
         // For each returned item, retrieve detailed information (e.g., stats).
         const shortsData = await Promise.all(
           data.items.map(async (item: any) => {
-            const videoResponse = await fetch(
-              `https://www.googleapis.com/youtube/v3/videos?part=statistics,contentDetails&id=${item.id.videoId}&key=${YOUTUBE_API_KEY}`
-            );
-            const videoData = await videoResponse.json();
-            const duration = videoData.items[0].contentDetails.duration;
-            // Only include videos that are <= 60 seconds in duration.
-            if (parseDuration(duration) <= 60) {
-              return {
-                id: item.id.videoId,
-                title: item.snippet.title,
-                thumbnailUrl: item.snippet.thumbnails.high.url,
-                viewCount: videoData.items[0].statistics.viewCount,
-                channelTitle: item.snippet.channelTitle,
-              };
+            try {
+              const videoResponse = await fetch(
+                `https://www.googleapis.com/youtube/v3/videos?part=statistics,contentDetails&id=${item.id.videoId}&key=${YOUTUBE_API_KEY}`
+              );
+              const videoData = await videoResponse.json();
+              if (videoData.items && videoData.items.length > 0) {
+                const duration = videoData.items[0].contentDetails?.duration;
+                if (duration && parseDuration(duration) <= 60) {
+                  return {
+                    id: item.id.videoId,
+                    title: item.snippet.title,
+                    thumbnailUrl:
+                      item.snippet.thumbnails.high?.url ||
+                      item.snippet.thumbnails.default?.url,
+                    viewCount: videoData.items[0].statistics?.viewCount || "0",
+                    channelTitle: item.snippet.channelTitle,
+                  };
+                }
+              }
+            } catch (error) {
+              console.error("Error fetching video details:", error);
             }
             return null;
           })
